@@ -1,0 +1,172 @@
+---
+---
+
+$background_color: #000;
+$text_color: darken(#fff, 15%);
+$link_color: $text-color;
+$link_hover_color: lighten($link_color, 20%);
+$sans: "PT Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+* { box-sizing: border-box; }
+
+html, body, div, section, ul, li, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background-color: $background_color;
+}
+
+body {
+    height: 100%;
+    font-family: $sans;
+    line-height: 150%;
+    font-size: 1.1875em;
+    font-weight: normal;
+    font-style: normal;
+    color: $text_color;
+    background-image: url(/img/shane_background.jpg);
+    background-position: top left;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 800ms;
+    .lt-ie9 & { font-size: 1.438em; }
+    .no-js &, &.fade-in { opacity: 1; }
+}
+
+@media all and (min-width: 47em) {
+    body { font-size: 1.438em; }
+}
+
+@media all and (min-width: 65em) {
+    body { font-size: 1.777em; }
+}
+
+@media all and (min-width: 90em) {
+    body { font-size: 2em; }
+}
+
+.container {
+    padding: 0 5%;
+    height: 100%;
+    max-width: 28.5em;
+}
+
+@media all and (min-width: 47em) {
+    .container { padding: 0 1.5em; }
+}
+
+.main {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5%;
+    background-color: #000;
+    background-color: rgba(#000, 0.5);
+}
+
+@media all and (min-width: 30em) {
+    .main { padding: 1.5em; }
+}
+
+@media all and (min-width: 60em) {
+    .main {
+        top: 4em;
+        right: 5%;
+        bottom: auto;
+        left: auto;
+    }
+}
+
+@media all and (min-width: 90em) {
+    .main {
+        top: 0;
+        right: auto;
+        left: 60%;
+        margin-top: 10%;
+        padding: 1.5em 2em;
+        width: 37%;
+        max-width: 22em;
+    }
+}
+
+@media only screen and (min-width: 30em) and (max-width: 63em)
+and (min-device-width: 320px) and (max-device-width : 1024px)
+and (orientation : landscape) {
+    .main {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        width: 31%;
+        min-width: 9.5em;
+    }
+    .first, .last { display: block; }
+}
+
+h1 {
+    font-size: 2.333em;
+    line-height: 120%;
+    font-weight: 700;
+    transition: font-size 0.2s ease-in-out;
+    .lt-ie9 & { line-height: 115%; }
+}
+
+@media all and (min-width: 47em) {
+    h1 { line-height: 115%; }
+}
+
+@media all and (min-width: 65em) {
+    h1 { line-height: 111%; }
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    color: $link_color;
+    text-decoration: none;
+    transition: color 200ms;
+    &:visited { color: $link_color; }
+    &:focus { outline: thin dotted; }
+    &:hover {
+        color: $link_hover_color;
+        outline: 0;
+    }
+}
+
+.links {
+    list-style: none;
+    li {
+        display: inline;
+        &:before { content: " - "; }
+        &:first-child:before { content: ""; }
+    }
+    a {
+        .touch & {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media only screen and (min-width: 30em) and (max-width: 63em)
+and (min-device-width: 320px) and (max-device-width : 1024px)
+and (orientation : landscape) {
+    .links {
+        position: absolute;
+        left: 0;
+        bottom: 1.5em;
+        right: 0;
+        padding: 1.5em 1.5em 0 1.5em;
+        li {
+            display: block;
+            &:before { display: none; }
+        }
+    }
+}
